@@ -51,6 +51,7 @@ export default new Vuex.Store({
     },
 
     DoLogin( {commit}, payload ) {
+      // 서버사용시 방법 = 서버측 주소 (axios > POST payload의 값 전달 > then을 통해 그 값을 commit에 저장)
       signInWithEmailAndPassword(auth, payload.pEmail, payload.pPassword)
       .then( (pUserInfo)=>{
         commit('fnSetUser', {

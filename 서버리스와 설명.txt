@@ -1,0 +1,12 @@
+프론트엔드 측의 vuex가 firebase의 auth 인증으로 post 보내는 형식으로
+주고받아서 기능을 함 >> 이렇게 기능하는것을 서버가 없이 연결한것을 서버리스라 함
+
+여기서 서버를 추가하게되면 사이에 서버가 들어가서 (express 서버)
+vuex에서 auth와 소통하는것이 아니고 서버와 auth가 소통해서
+받아온것을 vuex로 보내주듯이 형식이 됨
+(db도 연결해주게되면 vuex와 연결되서 작동)
+
+express 서버에서의 router - http메소드에 따라 함수 실행 
+(여기서 vuex의 router와 서버에서의 router는 별개임)
+(vuex의 router는 화면 브라우저를 바꾸고 / express의 router는 데이터 주고받고 접근)
+vuex가 주소로서 서버의 http메소드에 접근하여 response로서 받아와서 사용
